@@ -1,0 +1,6 @@
+[all_centos]
+_target_machine ansible_host=AAA.XXX.YYY.ZZZ
+
+
+[amp4e_targets]
+_target_machine

@@ -1,0 +1,9 @@
+---
+#Vars for AMP 4 Endpoint Deployment
+#amp4e_src_dir =  Directory to download the package
+#amp4e_url =  URL with the customized package to be deployed
+#amp4e_redeploy = If a New connector shall be Re-deployed
+
+ amp4e_src_dir: /usr/local/src/amp4e
+ amp4e_url: https://console.amp.cisco.com/install_packages/8b7bd829-7ff5-4612-aa8f-2c6d959b2709/download?product=LinuxProduct&product_variant_id=d3df47be-c102-4e75-ae99-c4dda8488376
+ amp4e_redeploy: true

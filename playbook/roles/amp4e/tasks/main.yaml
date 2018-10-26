@@ -1,0 +1,32 @@
+---
+#Simple Ansible Tasks to Install AMP for Enpoints Connector on a
+#Linux (CentOS) based computer
+
+ - name: Remove Current Installation of AMP for Endpoint
+   yum:
+    name: ciscoampconnector
+    state: absent
+   when: amp4e_redeploy
+   
+ - name: Remove Previous Connector Installer
+   file:
+    path: '{{ amp4e_src_dir }}'
+    state: absent
+   when: amp4e_redeploy    
+
+
+ - name: Create a Folder to copy src in Home Directory
+   file:
+    path: '{{ amp4e_src_dir }}'
+    state: directory
+    mode: 0755
+
+ - name: Download Connector from AMP Cloud
+   get_url:
+    url: '{{ amp4e_url }}'
+    dest: '{{ amp4e_src_dir }}/amp4e.rpm'
+
+ - name: Install AMP Connector from local package
+   yum:
+    name: '{{ amp4e_src_dir }}/amp4e.rpm'
+    state: present    

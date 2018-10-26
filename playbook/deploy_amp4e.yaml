@@ -1,0 +1,7 @@
+---
+ - name: Deploy AMP for Endpoint to a CentOS host
+   hosts: all_centos
+   user: root
+
+   roles:
+    - amp4e
